@@ -5,7 +5,12 @@ body {
 
 h1 {
   color: white;
+  font-family: 'Lobster', cursive;
+  font-size: 120px;
+  padding: 0;
 }
+
+
 
 .game_board {
   display: flex;
@@ -18,7 +23,7 @@ h1 {
 .game_title {
   width: 25vh;
   height: 25vh;
-  border: solid black 1px;
+  border: solid white 1px;
   box-sizing: border-box;
   margin: 5px;
   border-radius: 5%;
@@ -37,4 +42,9 @@ h1 {
   list-style-type: none;
   width: 90%;
   justify-content: space-between;
+}
+
+
+input {
+visibility: hidden;
 }
