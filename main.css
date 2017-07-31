@@ -1,0 +1,40 @@
+body {
+  margin: 0px;
+  background-color: #01538F;
+}
+
+h1 {
+  color: white;
+}
+
+.game_board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: center;
+
+}
+
+.game_title {
+  width: 25vh;
+  height: 25vh;
+  border: solid black 1px;
+  box-sizing: border-box;
+  margin: 5px;
+  border-radius: 5%;
+}
+
+
+.easy_game_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#game_details {
+  display: flex;
+  padding:0;
+  list-style-type: none;
+  width: 90%;
+  justify-content: space-between;
+}
