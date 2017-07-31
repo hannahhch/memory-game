@@ -10,7 +10,12 @@ h1 {
   padding: 0;
 }
 
+img {
+  width: 25vh;
+  height: 100%;
+  border-radius: 5%;
 
+}
 
 .game_board {
   display: flex;
@@ -23,10 +28,9 @@ h1 {
 .game_title {
   width: 25vh;
   height: 25vh;
-  border: solid white 1px;
+  border: none;
   box-sizing: border-box;
   margin: 5px;
-  border-radius: 5%;
 }
 
 
@@ -46,5 +50,6 @@ h1 {
 
 
 input {
-visibility: hidden;
+  position:absolute;
+    left:-999px;
 }
