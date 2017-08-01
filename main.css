@@ -19,7 +19,7 @@ h1 {
 .line_two {
   width: 100%;
   height: 15px;
-  background-color: #FFD046
+  background-color: #FFD046;
 }
 
 .game_card img {
@@ -75,28 +75,34 @@ content a, h3 {
   color: white;
 }
 
+h3 {
+  font-family: 'Raleway', sans-serif;
+}
+
 .content{
-  height: 5px%;
+  height: 5%;
 }
 
 .choices {
   display: flex;
   justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .choices a {
   text-decoration: none;
-  font-size: 35px;
-  color: white;
+  font-size: 45px;
 }
 
-#game_details {
+.game_details {
   display: flex;
   padding:0;
   list-style-type: none;
   width: 85%;
   justify-content: space-between;
   color: white;
+  font-family: 'Raleway', sans-serif;
 }
 
 
@@ -117,6 +123,38 @@ content a, h3 {
 .main_title {
   width: 90%;
   height:250px;
+}
+
+.title_box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+  height: 450px;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.title_box h1 {
+  font-size: 100px;
+}
+
+.choices .play_easy {
+  color: #FFD046;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.choices .play_hard {
+  color: #EF3E42;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.choices .play_easy:hover, .play_hard:hover{
+  color:white;
+  font-size: 50px;
 }
 
 /*footer*/
