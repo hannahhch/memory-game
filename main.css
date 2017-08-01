@@ -64,10 +64,30 @@ i {
 
 }
 
-.easy_game_container {
+.easy_game_container, .beginning_game_page{
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+content a, h3 {
+  text-align: center;
+  color: white;
+}
+
+.content{
+  height: 5px%;
+}
+
+.choices {
+  display: flex;
+  justify-content: space-around;
+}
+
+.choices a {
+  text-decoration: none;
+  font-size: 35px;
+  color: white;
 }
 
 #game_details {
