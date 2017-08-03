@@ -92,7 +92,10 @@ i {
   margin: 5px;
   border-radius: 5%;
   background-size: 100%;
+}
 
+.game_title:hover, .game_tile_sml:hover{
+  border: 5px solid white;
 }
 
 .game_tile_sml {
