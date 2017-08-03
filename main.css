@@ -1,3 +1,5 @@
+/*main body styles*/
+
 body {
   margin: 0px;
   background-color: #01538F;
@@ -10,6 +12,34 @@ h1 {
   padding-bottom: 0;
 }
 
+/*main page choice buttons (easy vs hard play)*/
+.choices .play_easy {
+  color: #FFD046;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.choices .play_hard {
+  color: #EF3E42;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.choices .play_easy:hover, .play_hard:hover{
+  color:white;
+  font-size: 50px;
+}
+
+/*holds all content*/
+.easy_game_container, .beginning_game_page{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+  /*header and footer line styles*/
 .line_one {
   width: 100%;
   height: 15px;
@@ -22,11 +52,16 @@ h1 {
   background-color: #FFD046;
 }
 
+/*star icons*/
+i {
+  color: white;
+}
+
+/*link to go to the home page*/
 .home_line {
   width: 95%;
   height: 35px;
   margin-top: 10px;
-
 }
 
 .home_line a {
@@ -39,23 +74,7 @@ h1 {
   border-bottom: 1px solid white;
 }
 
-.game_card img {
-  width: 25vh;
-  height: 100%;
-  border-radius: 5%;
-}
-
-.game_card_sml img {
-  width: 18vh;
-  height: 100%;
-  border-radius: 5%;
-}
-
-i {
-  color: white;
-
-}
-
+/*holds all of the image cards*/
 .game_board {
   display: flex;
   flex-wrap: wrap;
@@ -64,28 +83,57 @@ i {
   margin-bottom: 35px;
 }
 
+/*boxes that hold images (cards)*/
 .game_title {
-  max-width: 210px;
-  max-height: auto;
-  border: none;
+  width: 160px;
+  height: 160px;
+  border: 1px solid white;
   box-sizing: border-box;
   margin: 5px;
+  border-radius: 5%;
+  background-size: 100%;
+  background-image: url('images/bricks.jpg')
+
 }
 
-.game_title_sml {
-    max-width: 170px;
-    max-height: auto;
+.game_tile_sml {
+    width: 130px;
+    height: 130px;
     border: none;
     box-sizing: border-box;
     margin: 5px;
+    border: 1px solid white;
+    border-radius: 5%;
+    background-size: 100%;
 
 }
 
-.easy_game_container, .beginning_game_page{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+
+#one, #five {
+  background-image: url('images/bridge.jpg');
 }
+
+
+#two, #twelve {
+  background-image: url('images/smokestack.jpg');
+}
+
+#three, #fifteen {
+  background-image: url('images/watertower.jpg');
+}
+
+#four, #five {
+  background-image: url('images/art.jpg');
+}
+
+#six, #ten {
+  background-image: url('images/bullbike.jpg');
+}
+
+#seven, #eighteen {
+  background-image: url('images/durhambulls.jpg');
+}
+/*etc.*/
 
 content a, h3 {
   text-align: center;
@@ -123,19 +171,6 @@ h3 {
 }
 
 
-.game_title input {
-  position: absolute;
-  height: 0;
-  width: 0;
-  z-index: -2
-}
-
-.game_title_sml input {
-  position: absolute;
-  height: 0;
-  width: 0;
-  z-index: -2;
-}
 
 .main_title {
   width: 90%;
@@ -155,24 +190,7 @@ h3 {
   font-size: 100px;
 }
 
-.choices .play_easy {
-  color: #FFD046;
-  font-family: 'Raleway', sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-}
 
-.choices .play_hard {
-  color: #EF3E42;
-  font-family: 'Raleway', sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.choices .play_easy:hover, .play_hard:hover{
-  color:white;
-  font-size: 50px;
-}
 
 /*footer*/
 hr {
