@@ -85,11 +85,23 @@ function checkEquality(){
     //once done, remove them from the array so its clear for the next 2
     newArray.pop();
     newArray.pop();
+    //this might be good because the photos need to stay
+
   } else {
+
+    //THIS YOU WILL ALSO CHANGE
+
+    console.log('I am not equal');
     newArray.pop();
     newArray.pop();
+
+    //this only targets the last thing I clicked and needs a time delay
+
+    event.target.classList.add('flipped');
   }
 };
+
+
 
 //function set for hard mode (same as easy)
 sml_cards = sml_cards.sort(function (a, b) {
