@@ -68,7 +68,7 @@ for (let i = 0; i < tiles.length; i++) {
   event.target.classList.toggle('flipped');
   //put the two things you clicked into a new array
   newArray.push(event.target);
-  console.log(newArray);
+  //console.log(newArray);
   //if the length is less than 2 (which it will be) run the function
   if (newArray.length === 2) {
     checkEquality();
@@ -78,8 +78,10 @@ for (let i = 0; i < tiles.length; i++) {
 
 //you have an array that puts 2 thing into it at spot 0 and 1, if they are equal, alert.
 function checkEquality(){
-  if (newArray[0] === newArray[1]){
-    alert('I am equal');
+  if (newArray[0].classList.value === newArray[1].classList.value){
+
+    //THIS YOU WILL CHANGE
+    console.log('I am equal');
     //once done, remove them from the array so its clear for the next 2
     newArray.pop();
     newArray.pop();
