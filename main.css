@@ -112,8 +112,88 @@ i {
 
 /*each photo card*/
 
-#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen, #seventeen, #eighteen{
-  background-image: url('images/bricks.jpg');
+.flipped {
+  background-image: url('images/bricks.jpg') !important;
+}
+
+.bull {
+  background-image: url('images/art.jpg');
+}
+
+.bridge {
+  background-image: url('images/bridge.jpg');
+}
+
+.bullbike {
+  background-image: url('images/bullbike.jpg');
+}
+
+.durhambulls {
+  background-image: url('images/durhambulls.jpg');
+}
+
+.smokestack {
+  background-image: url('images/smokestack.jpg');
+}
+
+.watertower {
+  background-image: url('images/watertower.jpg');
+}
+
+.city {
+  background-image: url('images/city.jpg');
+}
+
+.bathroom {
+  background-image: url('images/bathroom.jpg');
+}
+
+.thedurham {
+  background-image: url('images/thedurham.jpg');
+}
+
+.man {
+  background-image: url('images/man.jpg');
+}
+
+.art {
+  background-image: url('images/art.jpg');
+}
+
+.carolina {
+  background-image: url('images/carolina.jpg');
+}
+
+.park {
+  background-image: url('images/park.jpg');
+}
+
+.penguin {
+  background-image: url('images/penguin.jpg');
+}
+
+.scratch {
+  background-image: url('images/scratch.jpg');
+}
+
+.wallst {
+  background-image: url('images/wallst.jpg');
+}
+
+.chapel {
+  background-image: url('images/chapel.jpg');
+}
+
+.bullsign {
+  background-image: url('images/bullsign.jpg');
+}
+
+.bees {
+  background-image: url('images/bees.jpg');
+}
+
+.rocket {
+  background-image: url('images/rocket')
 }
 /*etc.*/
 

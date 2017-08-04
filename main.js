@@ -1,76 +1,99 @@
-let cardImages = [
-'url(images/art.jpg)',
-'url(images/art.jpg)',
-'url(images/bridge.jpg)',
-'url(images/bridge.jpg)',
-'url(images/bullbike.jpg)',
-'url(images/bullbike.jpg)',
-'url(images/durhambulls.jpg)',
-'url(images/durhambulls.jpg)',
-'url(images/smokestack.jpg)',
-'url(images/smokestack.jpg)',
-'url(images/watertower.jpg)',
-'url(images/watertower.jpg)'];
+//array of image classes for easy mode
+let cards = [
+  'bullbike',
+  'bullbike',
+  'watertower',
+  'watertower',
+  'bridge',
+  'bridge',
+  'smokestack',
+  'smokestack',
+  'bull',
+  'bull',
+  'durhambulls',
+  'durhambulls',
+  'city',
+  'city',
+  'thedurham',
+  'thedurham',
+  'bathroom',
+  'bathroom',
+];
+//array of image classes for hard mode
+let sml_cards = [
+  'man',
+  'man',
+  'art',
+  'art',
+  'carolina',
+  'carolina',
+  'park',
+  'park',
+  'penguin',
+  'penguin',
+  'wallst',
+  'wallst',
+  'scratch',
+  'scratch',
+  'chapel',
+  'chapel',
+  'bullsign',
+  'bullsign',
+  'bees',
+  'bees',
+  'rocket',
+  'rocket',
+];
+//function set for easy mode
+  //this will take the cards array and sort them into a new random array
+cards = cards.sort(function (a, b) {
+	return Math.random() - 0.5;
+});
 
-
-/*changes the an image when clicked*/
-
-function changeImage(){
-  for (let i = 0; i < cardImages.length; i ++) {
-    this.style.backgroundImage = cardImages[i];
-  }
+  //select all the image boxes with game_title
+let tiles = document.querySelectorAll('.game_title ');
+  //loop through array and add the class (flipped) so that they start as bricks
+for (let i = 0; i < tiles.length; i++) {
+  tiles[i].classList.add('flipped');
+  //each time, take a photo out of array so there are no repeats
+  tiles[i].classList.add(cards.pop());
+  //when the event target (game title) is clicked, you can toggle from bricks to image
+  tiles[i].addEventListener('click', function (event) {
+  event.target.classList.toggle('flipped');
+});
 }
-/* I had to target each single button, thats*/
-let changeOne = document.getElementById('one');
-changeOne.addEventListener('click', changeImage);
 
-let changeTwo = document.getElementById('two');
-changeTwo.addEventListener('click', changeImage);
+//function set for hard mode (same as easy)
+sml_cards = sml_cards.sort(function (a, b) {
+	return Math.random() - 0.5;
+});
 
-let changeThree = document.getElementById('three');
-changeThree.addEventListener('click', changeImage);
+let sml_tiles = document.querySelectorAll('.game_tile_sml ');
+for (let i = 0; i < sml_tiles.length; i++) {
+  sml_tiles[i].classList.add('flipped');
 
-let changeFour = document.getElementById('four');
-changeFour.addEventListener('click', changeImage);
+  sml_tiles[i].classList.add(sml_cards.pop());
 
-let changeFive = document.getElementById('five');
-changeFive.addEventListener('click', changeImage);
+  sml_tiles[i].addEventListener('click', function (event) {
+  event.target.classList.toggle('flipped');
+});
+}
 
-let changeSix = document.getElementById('six');
-changeSix.addEventListener('click', changeImage);
+//this is the page timer
 
-let changeSeven = document.getElementById('seven');
-changeSeven.addEventListener('click', changeImage);
-
-let changeEight = document.getElementById('eight');
-changeEight.addEventListener('click', changeImage);
-
-let changeNine = document.getElementById('nine');
-changeNine.addEventListener('click', changeImage);
-
-let changeTen = document.getElementById('ten');
-changeTen.addEventListener('click', changeImage);
-
-let changeEleven = document.getElementById('eleven');
-changeEleven.addEventListener('click', changeImage);
-
-let changeTwelve = document.getElementById('twelve');
-changeTwelve.addEventListener('click', changeImage);
-
-let changeThirteen = document.getElementById('thirteen');
-changeThirteen.addEventListener('click', changeImage);
-
-let changeFourteen = document.getElementById('fourteen');
-changeFourteen.addEventListener('click', changeImage);
-
-let changeFifteen = document.getElementById('fifteen');
-changeFifteen.addEventListener('click', changeImage);
-
-let changeSixteen = document.getElementById('sixteen');
-changeSixteen.addEventListener('click', changeImage);
-
-let changeSeventeen = document.getElementById('seventeen');
-changeSeventeen.addEventListener('click', changeImage);
-
-let changeEighteen = document.getElementById('eighteen');
-changeEighteen.addEventListener('click', changeImage);
+//this var will set the time to count by seconds
+var timerVar = setInterval(countTimer, 1000);
+//set an empty variable to hold the seconds counted
+var totalSeconds = 0;
+function countTimer() {
+//increase the timer by itself (1 sec)
+   ++totalSeconds;
+//set a possible hour var
+   var hour = Math.floor(totalSeconds / 3600);
+//set a minute var
+   var minute = Math.floor((totalSeconds - hour * 3600)/60);
+//set the seconds var
+   var seconds = totalSeconds - (hour * 3600 + minute * 60);
+//the the timer placeholder from html and add the hour var, minute and seconds
+   document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
+}
