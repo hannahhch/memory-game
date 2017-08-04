@@ -12,6 +12,13 @@ h1 {
   padding-bottom: 0;
 }
 
+/*aligns the title*/
+.header_box {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
 /*main page choice buttons (easy vs hard play)*/
 .choices .play_easy {
   color: #FFD046;
@@ -193,7 +200,15 @@ i {
 }
 
 .rocket {
-  background-image: url('images/rocket')
+  background-image: url('images/rocket.jpg');
+}
+
+.dpac {
+  background-image: url('images/dpac.jpg');
+}
+
+.beer {
+  background-image: url('images/beer.jpg');
 }
 /*etc.*/
 
@@ -244,6 +259,7 @@ h3 {
   flex-wrap: wrap;
   width: 30%;
   height: 450px;
+  justify-content: center;
   text-align: center;
   margin: 15px 0;
 }
