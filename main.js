@@ -90,8 +90,9 @@ function checkEquality(){
   if (newArray[0].classList.value === newArray[1].classList.value){
     newArray[0].removeEventListener('click', handleClick);
     newArray[1].removeEventListener('click', handleClick);
-
+    beep();
     let endGame = document.querySelectorAll('.flipped');
+
 
     if (endGame.length === 0) {
       window.open('win.html','_self');
@@ -154,6 +155,7 @@ function checkSmlEquality(){
     newSmlArray[1].removeEventListener('click', handleSmlClick);
 
     let endHardGame = document.querySelectorAll('.flipped');
+    beep();
 
     if (endHardGame.length === 0){
       window.open('win.html', '_self');
@@ -199,4 +201,9 @@ function countTimer() {
   var seconds = totalSeconds - (hour * 3600 + minute * 60);
   //the the timer placeholder from html and add the hour var, minute and seconds
   document.getElementById("timer").innerHTML = hour + " hours | " + minute + " minutes | " + seconds + " seconds";
+}
+
+function beep() {
+    let snd = new Audio("sound/match.wav");
+    snd.play();
 }
