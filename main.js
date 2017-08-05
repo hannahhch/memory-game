@@ -94,7 +94,7 @@ function checkEquality(){
     let endGame = document.querySelectorAll('.flipped');
 
     if (endGame.length === 0) {
-      alert('You win!');
+      window.open('win.html','_self');
     }
   } else {
     //this only targets the last thing I clicked and needs a time delay
