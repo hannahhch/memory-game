@@ -130,22 +130,34 @@ for (let i = 0; i < sml_tiles.length; i++) {
   //each time, take a photo out of array so there are no repeats
   sml_tiles[i].classList.add(sml_cards.pop());
   //when the event target (game title) is clicked, you can toggle from bricks to image
-  sml_tiles[i].addEventListener('click', function (event) {
-    event.target.classList.toggle('flipped');
-    //put the two things you clicked into a new array
-    newSmlArray.push(event.target);
-    //console.log(newArray);
-    //if the length is less than 2 (which it will be) run the function
-    if (newSmlArray.length === 2) {
-      checkSmlEquality();
-    }
-  });
+
+  sml_tiles[i].addEventListener('click', handleSmlClick);
+}
+
+function handleSmlClick(event){
+  event.target.classList.toggle('flipped');
+  newSmlArray.push(event.target);
+  if (newSmlArray.length === 2) {
+    checkSmlEquality();
+  }
+  //put the two things you clicked into a new array
+  //console.log(newArray);
+  //if the length is less than 2 (which it will be) run the function
+
+
 }
 
 //you have an array that puts 2 thing into it at spot 0 and 1, if they are equal, alert.
 function checkSmlEquality(){
   if (newSmlArray[0].classList.value === newSmlArray[1].classList.value){
+    newSmlArray[0].removeEventListener('click', handleSmlClick);
+    newSmlArray[1].removeEventListener('click', handleSmlClick);
 
+    let endHardGame = document.querySelectorAll('.flipped');
+
+    if (endHardGame.length === 0){
+      window.open('win.html', '_self');
+    }
     //this might be good because the photos need to stay
 
   } else {
