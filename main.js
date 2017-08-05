@@ -64,33 +64,32 @@ for (let i = 0; i < tiles.length; i++) {
   //each time, take a photo out of array so there are no repeats
   tiles[i].classList.add(cards.pop());
   //when the event target (game title) is clicked, you can toggle from bricks to image
-  tiles[i].addEventListener('click', function (event) {
-    event.target.classList.toggle('flipped');
-    //put the two things you clicked into a new array
-    newArray.push(event.target);
-    //console.log(newArray);
-    //if the length is less than 2 (which it will be) run the function
-    if (newArray.length === 2) {
-      checkEquality();
-    }
-  });
+
+  tiles[i].addEventListener('click', handleClick);
 }
 
+function handleClick(event){
+  event.target.classList.toggle('flipped');
+  //put the two things you clicked into a new array
+  newArray.push(event.target);
+  //console.log(newArray);
+  //if the length is less than 2 (which it will be) run the function
+  if (newArray.length === 2) {
+    checkEquality();
+  }
+}
 //you have an array that puts 2 thing into it at spot 0 and 1, if they are equal, alert.
 function checkEquality(){
   if (newArray[0].classList.value === newArray[1].classList.value){
+    newArray[0].removeEventListener('click', handleClick);
+    newArray[1].removeEventListener('click', handleClick);
 
-    //THIS YOU WILL CHANGE
-    console.log('I am equal');
-    //this might be good because the photos need to stay
+    let endGame = document.querySelectorAll('.flipped');
 
+    if (endGame.length === 0) {
+      alert('You win!');
+    }
   } else {
-
-    //THIS YOU WILL ALSO CHANGE
-
-    console.log('I am not equal');
-
-
     //this only targets the last thing I clicked and needs a time delay
     let delay = 1000;
     let first = newArray[0];
@@ -140,15 +139,11 @@ for (let i = 0; i < sml_tiles.length; i++) {
 function checkSmlEquality(){
   if (newSmlArray[0].classList.value === newSmlArray[1].classList.value){
 
-    //THIS YOU WILL CHANGE
-    console.log('I am equal');
     //this might be good because the photos need to stay
 
   } else {
 
-    //THIS YOU WILL ALSO CHANGE
 
-    console.log('I am not equal');
 
 
     //this only targets the last thing I clicked and needs a time delay
