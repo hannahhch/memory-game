@@ -107,23 +107,65 @@ function checkEquality(){
   newArray.pop();
 };
 
-
+//-------------------------------------------------------------------------//
 
 //function set for hard mode (same as easy)
 sml_cards = sml_cards.sort(function (a, b) {
   return Math.random() - 0.5;
 });
 
-let sml_tiles = document.querySelectorAll('.game_tile_sml ');
+//select all the image boxes with game_title
+let sml_tiles = document.querySelectorAll('.game_tile_sml');
+//make an emtpty array for later
+let newSmlArray = [];
+//loop through array and add the class (flipped) so that they start as bricks
 for (let i = 0; i < sml_tiles.length; i++) {
   sml_tiles[i].classList.add('flipped');
-
+  //each time, take a photo out of array so there are no repeats
   sml_tiles[i].classList.add(sml_cards.pop());
-
+  //when the event target (game title) is clicked, you can toggle from bricks to image
   sml_tiles[i].addEventListener('click', function (event) {
     event.target.classList.toggle('flipped');
+    //put the two things you clicked into a new array
+    newSmlArray.push(event.target);
+    //console.log(newArray);
+    //if the length is less than 2 (which it will be) run the function
+    if (newSmlArray.length === 2) {
+      checkSmlEquality();
+    }
   });
 }
+
+//you have an array that puts 2 thing into it at spot 0 and 1, if they are equal, alert.
+function checkSmlEquality(){
+  if (newSmlArray[0].classList.value === newSmlArray[1].classList.value){
+
+    //THIS YOU WILL CHANGE
+    console.log('I am equal');
+    //this might be good because the photos need to stay
+
+  } else {
+
+    //THIS YOU WILL ALSO CHANGE
+
+    console.log('I am not equal');
+
+
+    //this only targets the last thing I clicked and needs a time delay
+    let smldelay = 1000;
+    let smlfirst = newSmlArray[0];
+    let smlsecond = newSmlArray[1];
+
+    setTimeout(function() {
+      smlfirst.classList.add('flipped');
+      smlsecond.classList.add('flipped');
+    }, smldelay);
+  }
+
+  //once done, remove them from the array so its clear for the next 2
+  newSmlArray.pop();
+  newSmlArray.pop();
+};
 
 
 //this is the page timer
