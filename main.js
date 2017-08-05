@@ -49,31 +49,31 @@ let sml_cards = [
   'beer'
 ];
 //function set for easy mode
-  //this will take the cards array and sort them into a new random array
+//this will take the cards array and sort them into a new random array
 cards = cards.sort(function (a, b) {
-	return Math.random() - 0.5;
+  return Math.random() - 0.5;
 });
 
-  //select all the image boxes with game_title
+//select all the image boxes with game_title
 let tiles = document.querySelectorAll('.game_title ');
 //make an emtpty array for later
 let newArray = [];
-  //loop through array and add the class (flipped) so that they start as bricks
+//loop through array and add the class (flipped) so that they start as bricks
 for (let i = 0; i < tiles.length; i++) {
   tiles[i].classList.add('flipped');
   //each time, take a photo out of array so there are no repeats
   tiles[i].classList.add(cards.pop());
   //when the event target (game title) is clicked, you can toggle from bricks to image
   tiles[i].addEventListener('click', function (event) {
-  event.target.classList.toggle('flipped');
-  //put the two things you clicked into a new array
-  newArray.push(event.target);
-  //console.log(newArray);
-  //if the length is less than 2 (which it will be) run the function
-  if (newArray.length === 2) {
-    checkEquality();
-  }
-});
+    event.target.classList.toggle('flipped');
+    //put the two things you clicked into a new array
+    newArray.push(event.target);
+    //console.log(newArray);
+    //if the length is less than 2 (which it will be) run the function
+    if (newArray.length === 2) {
+      checkEquality();
+    }
+  });
 }
 
 //you have an array that puts 2 thing into it at spot 0 and 1, if they are equal, alert.
@@ -82,9 +82,6 @@ function checkEquality(){
 
     //THIS YOU WILL CHANGE
     console.log('I am equal');
-    //once done, remove them from the array so its clear for the next 2
-    newArray.pop();
-    newArray.pop();
     //this might be good because the photos need to stay
 
   } else {
@@ -92,20 +89,29 @@ function checkEquality(){
     //THIS YOU WILL ALSO CHANGE
 
     console.log('I am not equal');
-    newArray.pop();
-    newArray.pop();
+
 
     //this only targets the last thing I clicked and needs a time delay
+    let delay = 1000;
+    let first = newArray[0];
+    let second = newArray[1];
 
-    event.target.classList.add('flipped');
+    setTimeout(function() {
+      first.classList.add('flipped');
+      second.classList.add('flipped');
+    }, delay);
   }
+
+  //once done, remove them from the array so its clear for the next 2
+  newArray.pop();
+  newArray.pop();
 };
 
 
 
 //function set for hard mode (same as easy)
 sml_cards = sml_cards.sort(function (a, b) {
-	return Math.random() - 0.5;
+  return Math.random() - 0.5;
 });
 
 let sml_tiles = document.querySelectorAll('.game_tile_sml ');
@@ -115,8 +121,8 @@ for (let i = 0; i < sml_tiles.length; i++) {
   sml_tiles[i].classList.add(sml_cards.pop());
 
   sml_tiles[i].addEventListener('click', function (event) {
-  event.target.classList.toggle('flipped');
-});
+    event.target.classList.toggle('flipped');
+  });
 }
 
 
@@ -127,14 +133,14 @@ var timerVar = setInterval(countTimer, 1000);
 //set an empty variable to hold the seconds counted
 var totalSeconds = 0;
 function countTimer() {
-//increase the timer by itself (1 sec)
-   ++totalSeconds;
-//set a possible hour var
-   var hour = Math.floor(totalSeconds / 3600);
-//set a minute var
-   var minute = Math.floor((totalSeconds - hour * 3600)/60);
-//set the seconds var
-   var seconds = totalSeconds - (hour * 3600 + minute * 60);
-//the the timer placeholder from html and add the hour var, minute and seconds
-   document.getElementById("timer").innerHTML = hour + " hours | " + minute + " minutes | " + seconds + " seconds";
+  //increase the timer by itself (1 sec)
+  ++totalSeconds;
+  //set a possible hour var
+  var hour = Math.floor(totalSeconds / 3600);
+  //set a minute var
+  var minute = Math.floor((totalSeconds - hour * 3600)/60);
+  //set the seconds var
+  var seconds = totalSeconds - (hour * 3600 + minute * 60);
+  //the the timer placeholder from html and add the hour var, minute and seconds
+  document.getElementById("timer").innerHTML = hour + " hours | " + minute + " minutes | " + seconds + " seconds";
 }
