@@ -16,13 +16,12 @@ let cards = [
   'city',
   'thedurham',
   'thedurham',
-  'bathroom',
-  'bathroom',
+  'fullsteam',
+  'fullsteam',
 ];
 //array of image classes for hard mode
 let sml_cards = [
-  'man',
-  'man',
+
   'art',
   'art',
   'carolina',
@@ -46,7 +45,15 @@ let sml_cards = [
   'dpac',
   'dpac',
   'beer',
-  'beer'
+  'beer',
+  'bathroom',
+  'bathroom',
+  'mothership',
+  'mothership',
+  'cocoa',
+  'cocoa',
+  'motorco',
+  'motorco',
 ];
 //function set for easy mode
 //this will take the cards array and sort them into a new random array

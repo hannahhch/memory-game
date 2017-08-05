@@ -124,7 +124,7 @@ i {
 }
 
 .bull {
-  background-image: url('images/art.jpg');
+  background-image: url('images/bull.jpg');
 }
 
 .bridge {
@@ -211,8 +211,20 @@ i {
   background-image: url('images/beer.jpg');
 }
 
-.winningcard {
-  background-color: blue;
+.motorco{
+  background-image: url('images/motorco.jpg');
+}
+
+.fullsteam {
+  background-image: url('images/fullsteam.jpg');
+}
+
+.cocoa {
+  background-image: url('images/cocoa.jpg');
+}
+
+.mothership {
+  background-image: url('images/mothership.jpg');
 }
 /*etc.*/
 
