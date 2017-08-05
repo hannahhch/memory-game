@@ -120,111 +120,111 @@ i {
 /*each photo card*/
 
 .flipped {
-  background-image: url('images/bricks.jpg') !important;
+  background-image: url('images/brickssmall.jpg') !important;
 }
 
 .bull {
-  background-image: url('images/bull.jpg');
+  background-image: url('images/bullsmall.jpg');
 }
 
 .bridge {
-  background-image: url('images/bridge.jpg');
+  background-image: url('images/bridgesmall.jpg');
 }
 
 .bullbike {
-  background-image: url('images/bullbike.jpg');
+  background-image: url('images/bullbikesmall.jpg');
 }
 
 .durhambulls {
-  background-image: url('images/durhambulls.jpg');
+  background-image: url('images/durhambullssmall.jpg');
 }
 
 .smokestack {
-  background-image: url('images/smokestack.jpg');
+  background-image: url('images/smokestacksmall.jpg');
 }
 
 .watertower {
-  background-image: url('images/watertower.jpg');
+  background-image: url('images/watertowersmall.jpg');
 }
 
 .city {
-  background-image: url('images/city.jpg');
+  background-image: url('images/citysmall.jpg');
 }
 
 .bathroom {
-  background-image: url('images/bathroom.jpg');
+  background-image: url('images/bathroomsmall.jpg');
 }
 
 .thedurham {
-  background-image: url('images/thedurham.jpg');
+  background-image: url('images/thedurhamsmall.jpg');
 }
 
 .man {
-  background-image: url('images/man.jpg');
+  background-image: url('images/mansmall.jpg');
 }
 
 .art {
-  background-image: url('images/art.jpg');
+  background-image: url('images/artsmall.jpg');
 }
 
 .carolina {
-  background-image: url('images/carolina.jpg');
+  background-image: url('images/carolinasmall.jpg');
 }
 
 .park {
-  background-image: url('images/park.jpg');
+  background-image: url('images/parksmall.jpg');
 }
 
 .penguin {
-  background-image: url('images/penguin.jpg');
+  background-image: url('images/penguinsmall.jpg');
 }
 
-.scratch {
-  background-image: url('images/scratch.jpg');
+.parlour {
+  background-image: url('images/parloursmall.jpg');
 }
 
 .wallst {
-  background-image: url('images/wallst.jpg');
+  background-image: url('images/wallstsmall.jpg');
 }
 
 .chapel {
-  background-image: url('images/chapel.jpg');
+  background-image: url('images/chapelsmall.jpg');
 }
 
 .bullsign {
-  background-image: url('images/bullsign.jpg');
+  background-image: url('images/bullsignsmall.jpg');
 }
 
 .bees {
-  background-image: url('images/bees.jpg');
+  background-image: url('images/beessmall.jpg');
 }
 
 .rocket {
-  background-image: url('images/rocket.jpg');
+  background-image: url('images/rocketsmall.jpg');
 }
 
 .dpac {
-  background-image: url('images/dpac.jpg');
+  background-image: url('images/dpacsmall.jpg');
 }
 
 .beer {
-  background-image: url('images/beer.jpg');
+  background-image: url('images/beersmall.jpg');
 }
 
 .motorco{
-  background-image: url('images/motorco.jpg');
+  background-image: url('images/motorcosmall.jpg');
 }
 
 .fullsteam {
-  background-image: url('images/fullsteam.jpg');
+  background-image: url('images/fullsteamsmall.jpg');
 }
 
 .cocoa {
-  background-image: url('images/cocoa.jpg');
+  background-image: url('images/cocoasmall.jpg');
 }
 
 .mothership {
-  background-image: url('images/mothership.jpg');
+  background-image: url('images/mothershipsmall.jpg');
 }
 /*etc.*/
 
@@ -310,8 +310,10 @@ background-size: 100px 100px;
 
 .win_box h1 {
     color:#EF3E42;
-    font-size: 250px;
+    font-size: 200px;
 }
+
+
 
 #play_again {
   text-decoration: none;
