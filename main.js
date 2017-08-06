@@ -1,4 +1,4 @@
-//array of image classes for easy mode
+//array of image cards for easy mode
 let cards = [
   'bullbike',
   'bullbike',
@@ -19,7 +19,7 @@ let cards = [
   'fullsteam',
   'fullsteam',
 ];
-//array of image classes for hard mode
+//array of smaller image cards for hard mode
 let sml_cards = [
 
   'art',
@@ -55,7 +55,8 @@ let sml_cards = [
   'motorco',
   'motorco',
 ];
-//function set for easy mode
+//function set for easy mode below
+
 //this will take the cards array and sort them into a new random array
 cards = cards.sort(function (a, b) {
   return Math.random() - 0.5;
@@ -71,7 +72,6 @@ for (let i = 0; i < tiles.length; i++) {
   //each time, take a photo out of array so there are no repeats
   tiles[i].classList.add(cards.pop());
   //when the event target (game title) is clicked, you can toggle from bricks to image
-
   tiles[i].addEventListener('click', handleClick);
 }
 
@@ -79,30 +79,33 @@ function handleClick(event){
   event.target.classList.toggle('flipped');
   //put the two things you clicked into a new array
   newArray.push(event.target);
-  //console.log(newArray);
   //if the length is less than 2 (which it will be) run the function
   if (newArray.length === 2) {
     checkEquality();
   }
 }
-//you have an array that puts 2 thing into it at spot 0 and 1, if they are equal, alert.
+//you have an array that puts 2 thing into it at spot 0 and 1, if they are equal, do the click function.
 function checkEquality(){
   if (newArray[0].classList.value === newArray[1].classList.value){
     newArray[0].removeEventListener('click', handleClick);
     newArray[1].removeEventListener('click', handleClick);
+    //if they are equal, make a noise
     beep();
+    //set a variable to end the game if all cards are flipped
     let endGame = document.querySelectorAll('.flipped');
 
-
+    //if the length of the array is 0 (game over), go to the win page
     if (endGame.length === 0) {
+      //.self makes the page replace
       window.open('win.html','_self');
     }
   } else {
-    //this only targets the last thing I clicked and needs a time delay
+    //delay so that they are clickable
     let delay = 1000;
+    //set new variables so that the computer remembers what the array items were
     let first = newArray[0];
     let second = newArray[1];
-
+    //actualy function that controls the time
     setTimeout(function() {
       first.classList.add('flipped');
       second.classList.add('flipped');
@@ -131,21 +134,17 @@ for (let i = 0; i < sml_tiles.length; i++) {
   //each time, take a photo out of array so there are no repeats
   sml_tiles[i].classList.add(sml_cards.pop());
   //when the event target (game title) is clicked, you can toggle from bricks to image
-
   sml_tiles[i].addEventListener('click', handleSmlClick);
 }
 
 function handleSmlClick(event){
   event.target.classList.toggle('flipped');
   newSmlArray.push(event.target);
+  //put the two things you clicked into a new array
+  //if the length is less than 2 (which it will be) run the function
   if (newSmlArray.length === 2) {
     checkSmlEquality();
   }
-  //put the two things you clicked into a new array
-  //console.log(newArray);
-  //if the length is less than 2 (which it will be) run the function
-
-
 }
 
 //you have an array that puts 2 thing into it at spot 0 and 1, if they are equal, alert.
@@ -160,14 +159,9 @@ function checkSmlEquality(){
     if (endHardGame.length === 0){
       window.open('win.html', '_self');
     }
-    //this might be good because the photos need to stay
 
   } else {
 
-
-
-
-    //this only targets the last thing I clicked and needs a time delay
     let smldelay = 1000;
     let smlfirst = newSmlArray[0];
     let smlsecond = newSmlArray[1];
@@ -203,6 +197,7 @@ function countTimer() {
   document.getElementById("timer").innerHTML = hour + " hours | " + minute + " minutes | " + seconds + " seconds";
 }
 
+//this function adds sound to the correct cards
 function beep() {
     let snd = new Audio("sound/match.wav");
     snd.play();
