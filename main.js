@@ -57,8 +57,9 @@ let sml_cards = [
 ];
 //function set for easy mode below
 
-//this will take the cards array and sort them into a new random array
+//this will take the cards array and sort them
 cards = cards.sort(function (a, b) {
+  //this makes sure the sort is random. 0.5 is needed to work with sort
   return Math.random() - 0.5;
 });
 
