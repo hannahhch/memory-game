@@ -98,7 +98,7 @@ function checkEquality(){
     //if the length of the array is 0 (game over), go to the win page
     if (endGame.length === 0) {
       //.self makes the page replace
-      window.open('/public/win.html','_self');
+      window.open('win.html','_self');
     }
   } else {
     //delay so that they are clickable
@@ -158,7 +158,7 @@ function checkSmlEquality(){
     beep();
 
     if (endHardGame.length === 0){
-      window.open('/public/win.html', '_self');
+      window.open('win.html', '_self');
     }
 
   } else {
