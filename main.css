@@ -90,7 +90,7 @@ i {
 }
 
 /*boxes that hold images (cards)*/
-.game_title {
+.game_tile {
   width: 160px;
   height: 160px;
   border: 1px solid white;
@@ -100,19 +100,13 @@ i {
   background-size: 100%;
 }
 
-.game_title:hover, .game_tile_sml:hover{
+.game_tile:hover, .game_tile_sml:hover{
   border: 5px solid white;
 }
 
 .game_tile_sml {
     width: 130px;
     height: 130px;
-    border: none;
-    box-sizing: border-box;
-    margin: 5px;
-    border: 1px solid white;
-    border-radius: 5%;
-    background-size: 100%;
 
 }
 

@@ -1,5 +1,5 @@
 //array of image cards for easy mode
-let cards = [
+let big_cards = [
   'bullbike',
   'bullbike',
   'watertower',
@@ -21,7 +21,6 @@ let cards = [
 ];
 //array of smaller image cards for hard mode
 let sml_cards = [
-
   'art',
   'art',
   'carolina',
@@ -58,13 +57,29 @@ let sml_cards = [
 //function set for easy mode below
 
 //this will take the cards array and sort them
-cards = cards.sort(function (a, b) {
+big_cards = big_cards.sort(function (a, b) {
   //this makes sure the sort is random. 0.5 is needed to work with sort
   return Math.random() - 0.5;
 });
 
+//function set for hard mode (same as easy)
+sml_cards = sml_cards.sort(function (a, b) {
+  return Math.random() - 0.5;
+});
+
 //select all the image boxes with game_title
-let tiles = document.querySelectorAll('.game_title ');
+let tiles = document.querySelectorAll('.game_tile ');
+
+let cards = [];
+
+if (tiles.length === big_cards.length){
+  cards = big_cards;
+} else if (tiles.length === sml_cards.length){
+  cards = sml_cards;
+} else {
+  console.error("Error! Something went wrong!");
+  console.error(tiles.length, sml_cards.length);
+}
 //make an emtpty array for later
 let newArray = [];
 //loop through array and add the class (flipped) so that they start as bricks
@@ -117,67 +132,6 @@ function checkEquality(){
   newArray.pop();
   newArray.pop();
 };
-
-//-------------------------------------------------------------------------//
-
-//function set for hard mode (same as easy)
-sml_cards = sml_cards.sort(function (a, b) {
-  return Math.random() - 0.5;
-});
-
-//select all the image boxes with game_title
-let sml_tiles = document.querySelectorAll('.game_tile_sml');
-//make an emtpty array for later
-let newSmlArray = [];
-//loop through array and add the class (flipped) so that they start as bricks
-for (let i = 0; i < sml_tiles.length; i++) {
-  sml_tiles[i].classList.add('flipped');
-  //each time, take a photo out of array so there are no repeats
-  sml_tiles[i].classList.add(sml_cards.pop());
-  //when the event target (game title) is clicked, you can toggle from bricks to image
-  sml_tiles[i].addEventListener('click', handleSmlClick);
-}
-
-function handleSmlClick(event){
-  event.target.classList.toggle('flipped');
-  newSmlArray.push(event.target);
-  //put the two things you clicked into a new array
-  //if the length is less than 2 (which it will be) run the function
-  if (newSmlArray.length === 2) {
-    checkSmlEquality();
-  }
-}
-
-//you have an array that puts 2 thing into it at spot 0 and 1, if they are equal, alert.
-function checkSmlEquality(){
-  if (newSmlArray[0].classList.value === newSmlArray[1].classList.value){
-    newSmlArray[0].removeEventListener('click', handleSmlClick);
-    newSmlArray[1].removeEventListener('click', handleSmlClick);
-
-    let endHardGame = document.querySelectorAll('.flipped');
-    beep();
-
-    if (endHardGame.length === 0){
-      window.open('win.html', '_self');
-    }
-
-  } else {
-
-    let smldelay = 1000;
-    let smlfirst = newSmlArray[0];
-    let smlsecond = newSmlArray[1];
-
-    setTimeout(function() {
-      smlfirst.classList.add('flipped');
-      smlsecond.classList.add('flipped');
-    }, smldelay);
-  }
-
-  //once done, remove them from the array so its clear for the next 2
-  newSmlArray.pop();
-  newSmlArray.pop();
-};
-
 
 //this is the page timer
 
